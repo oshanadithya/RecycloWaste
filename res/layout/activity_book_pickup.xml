@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookPickup">
+
+    <TextView
+        android:id="@+id/typeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="327dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/page_content_font"
+        android:text="@string/book_pickup_type"
+        android:textColor="@color/black"
+        android:textSize="@dimen/SubHeaderFontSize"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="291dp"
+        android:fontFamily="@font/page_content_font"
+        android:text="@string/book_pickup_location"
+        android:textColor="@color/black"
+        android:textSize="@dimen/SubHeaderFontSize"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipgroup" />
+
+    <TextView
+        android:id="@+id/datettimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="240dp"
+        android:fontFamily="@font/page_content_font"
+        android:text="@string/book_pickup_datetime"
+        android:textColor="@color/black"
+        android:textSize="@dimen/SubHeaderFontSize"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputLocation" />
+
+
+    <TextView
+        android:id="@+id/inputLocation"
+        android:layout_width="290dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:fontFamily="@font/page_sub_header_font"
+        android:inputType="textPersonName"
+        android:text="@string/book_pickup_inptlocation"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnTime2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationText" />
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="358dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="clickConfirm"
+        android:text="@string/book_pickup_confirm"
+        android:textAllCaps="true"
+        android:textSize="14sp"
+        app:backgroundTint="@color/green_new"
+        app:cornerRadius="@dimen/btn_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/spinnerCard"
+        android:layout_width="357dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/typeText">
+
+        <Spinner
+            android:id="@+id/typeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:spinnerMode="dropdown"
+            android:textAlignment="viewStart" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/containsTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="290dp"
+        android:fontFamily="@font/page_content_font"
+        android:text="@string/book_pickup_contains"
+        android:textColor="@color/black"
+        android:textSize="@dimen/SubHeaderFontSize"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCard" />
+
+    <Button
+        android:id="@+id/btnDate"
+        android:layout_width="161dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="29dp"
+        android:drawableEnd="@drawable/ic_baseline_calendar_today_24_black"
+        android:fontFamily="@font/page_sub_header_font"
+        android:onClick="onClickDate"
+        android:text="08/08/2021"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnTime"
+        app:layout_constraintEnd_toStartOf="@+id/btnTime"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnTime"
+        android:layout_width="161dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:drawableEnd="@drawable/ic_baseline_access_time_24_black"
+        android:fontFamily="@font/page_sub_header_font"
+        android:onClick="onClickTime"
+        android:text="08:30"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datettimeText" />
+
+    <Button
+        android:id="@+id/btnTime2"
+        android:layout_width="53dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:drawableEnd="@drawable/ic_baseline_gps_fixed_24"
+        android:onClick="onClickLocation"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/inputLocation"
+        app:layout_constraintTop_toBottomOf="@+id/locationText" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipgroup"
+        android:layout_width="346dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containsTitleText">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/waste1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:fontFamily="sans-serif"
+            android:text="chip 1"
+            android:textSize="16sp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/waste2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="chip 2"
+            android:textSize="16sp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/waste3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="chip 3"
+            android:textSize="16sp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/waste4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="chip 4"
+            android:textSize="16sp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/waste5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="chip 5"
+            android:textSize="16sp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/waste6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="chip 6"
+            android:textSize="16sp" />
+    </com.google.android.material.chip.ChipGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

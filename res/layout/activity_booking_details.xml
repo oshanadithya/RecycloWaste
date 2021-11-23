@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".BookingDetails">
+
+    <Button
+        android:id="@+id/btnReschedule"
+        android:layout_width="141dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="28dp"
+        android:layout_toStartOf="@+id/btnCancel"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="reschedule"
+        android:text="@string/booking_details_reschedule"
+        android:textAllCaps="true"
+        app:backgroundTint="@color/green_new"
+        app:cornerRadius="@dimen/btn_radius" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="cancel"
+        android:text="@string/booking_details_cancel"
+        android:textAllCaps="true"
+        app:backgroundTint="@android:color/holo_red_light"
+        app:cornerRadius="@dimen/btn_radius" />
+
+    <TextView
+        android:id="@+id/tv_driver_title"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView10"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/page_content_font"
+        android:text="@string/booking_details_driver"
+        android:textColor="@color/black"
+        android:textSize="@dimen/SubHeaderFontSize"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_type_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_driver"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/page_content_font"
+        android:text="@string/booking_details_type"
+        android:textColor="@color/black"
+        android:textSize="@dimen/SubHeaderFontSize"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_contains_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_type"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="200dp"
+        android:fontFamily="@font/page_content_font"
+        android:text="@string/booking_details_contains"
+        android:textColor="@color/black"
+        android:textSize="@dimen/SubHeaderFontSize"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_location_title"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_contains"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/page_content_font"
+        android:text="@string/booking_details_location"
+        android:textColor="@color/black"
+        android:textSize="@dimen/SubHeaderFontSize"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_date_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_location"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/page_content_font"
+        android:text="@string/booking_details_date"
+        android:textColor="@color/black"
+        android:textSize="@dimen/SubHeaderFontSize"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_time_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_date_title"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/page_content_font"
+        android:text="@string/booking_details_time"
+        android:textColor="@color/black"
+        android:textSize="@dimen/SubHeaderFontSize"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_payment_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_time_title"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/page_content_font"
+        android:text="@string/booking_details_payment"
+        android:textColor="@color/black"
+        android:textSize="@dimen/SubHeaderFontSize"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_driver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView10"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toEndOf="@+id/tv_driver_title"
+        android:fontFamily="@font/page_sub_header_font"
+        android:text="-------"
+        android:textColor="@color/tv_grey"
+        android:textSize="@dimen/SubHeaderFontSize" />
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_driver"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toEndOf="@+id/tv_type_title"
+        android:fontFamily="@font/page_sub_header_font"
+        android:text="------"
+        android:textColor="@color/tv_grey"
+        android:textSize="@dimen/SubHeaderFontSize" />
+
+    <TextView
+        android:id="@+id/tv_contains"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_contains_title"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/page_sub_header_font"
+        android:text="------, -------"
+        android:textColor="@color/tv_grey"
+        android:textSize="@dimen/SubHeaderFontSize" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_contains"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toEndOf="@+id/tv_location_title"
+        android:fontFamily="@font/page_sub_header_font"
+        android:text="------"
+        android:textColor="@color/tv_grey"
+        android:textSize="@dimen/SubHeaderFontSize" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_location"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toEndOf="@+id/tv_date_title"
+        android:fontFamily="@font/page_sub_header_font"
+        android:text="------"
+        android:textColor="@color/tv_grey"
+        android:textSize="@dimen/SubHeaderFontSize" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_date"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toEndOf="@+id/tv_date_title"
+        android:fontFamily="@font/page_sub_header_font"
+        android:text="------"
+        android:textColor="@color/tv_grey"
+        android:textSize="@dimen/SubHeaderFontSize" />
+
+    <TextView
+        android:id="@+id/tv_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_time"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toEndOf="@+id/tv_payment_title"
+        android:fontFamily="@font/page_sub_header_font"
+        android:text="------"
+        android:textColor="@color/tv_grey"
+        android:textSize="@dimen/SubHeaderFontSize" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="146dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="100dp"
+        app:srcCompat="@drawable/truck" />
+
+</RelativeLayout>
